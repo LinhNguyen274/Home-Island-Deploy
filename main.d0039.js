@@ -56,7 +56,6 @@ window.boot = function () {
                 //     });
                 // });
             }
-            console.log(preload);
             cc.resources.load(preload, (finish, total, item) => {
                 let currPercent = 50 + 50 * finish / total;
                 if (window.progressBar) {
@@ -77,7 +76,7 @@ window.boot = function () {
         var progressBar2 = splash.querySelector('.progress-bar span');
 
         onProgress = function (finish, total) {
-            var percent = 50 * finish / total;
+            var percent = 100 * finish / total;
             if (percentCurr < percent) {
                 percentCurr = percent;
             } else {
@@ -207,7 +206,7 @@ window.boot = function () {
 if (window.jsb) {
     var isRuntime = (typeof loadRuntime === 'function');
     if (isRuntime) {
-        require('src/settings.807a0.js');
+        require('src/settings.147e8.js');
         require('src/cocos2d-runtime.js');
         if (CC_PHYSICS_BUILTIN || CC_PHYSICS_CANNON) {
             require('src/physics.js');
@@ -215,7 +214,7 @@ if (window.jsb) {
         require('jsb-adapter/engine/index.js');
     }
     else {
-        require('src/settings.807a0.js');
+        require('src/settings.147e8.js');
         require('src/cocos2d-jsb.js');
         if (CC_PHYSICS_BUILTIN || CC_PHYSICS_CANNON) {
             require('src/physics.js');
